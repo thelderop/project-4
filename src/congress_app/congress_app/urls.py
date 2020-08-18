@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, state_view, senator_view, bill_view
+from congress.views import state_detail_view
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
-    path ('state/', state_view, name="state"),
-    path ('bill/', bill_view, name="bill"),
-    path ('senator/', senator_view, name="senator"),
+    path ('search-state/', state_view, name="state"),
+    path ('search-bill/', bill_view, name="bill"),
+    path ('search-senator/', senator_view, name="senator"),
+    path ('state/', state_detail_view)
 ]
