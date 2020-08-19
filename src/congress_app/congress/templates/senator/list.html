@@ -6,9 +6,11 @@
 
 {% block content %}
 
-{% for instance in object_list %}
-    {{ instance.name}}
+    <div>
+        {% for instance in object_list %}
+            {{ instance.name}}
 
-{% endfor %}
+        {% endfor %}
+    </div>
 
 {% endblock %}
