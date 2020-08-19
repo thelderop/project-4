@@ -12,10 +12,12 @@ def state_detail_view(request):
 
 def state_create_view(request):
     form = StateForm(request.POST or None)
+    if form.is_valid():
+        form.save()
     context = {
-        "object": obj
+        "form": form
     }
-    return render(request, "state/detail.html", context)
+    return render(request, "state/create.html", context)
 
 # Senator views
 def senator_detail_view(request):
@@ -27,10 +29,12 @@ def senator_detail_view(request):
 
 def senator_create_view(request):
     form = SenatorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
     context = {
-        "object": obj
+        "form": form
     }
-    return render(request, "senator/detail.html", context)
+    return render(request, "senator/create.html", context)
 
 # Senate_Bill views
 def senate_bill_detail_view(request):
@@ -42,7 +46,9 @@ def senate_bill_detail_view(request):
 
 def senate_bill_create_view(request):
     form = Senate_BillForm(request.POST or None)
+    if form.is_valid():
+        form.save()
     context = {
-        "object": obj
+        "form": form
     }
-    return render(request, "senate_bill/detail.html", context)
+    return render(request, "senate_bill/create.html", context)
