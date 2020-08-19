@@ -34,6 +34,13 @@ def senator_detail_view(request):
     }
     return render(request, "senator/detail.html", context)
 
+def senator_detail2_view(request):
+    obj = Senator.objects.get(id=2)
+    context = {
+        "object": obj
+    }
+    return render(request, "senator/detail2.html", context)
+
 def senator_create_view(request):
     form = SenatorForm(request.POST or None)
     if form.is_valid():
@@ -42,6 +49,13 @@ def senator_create_view(request):
         "form": form
     }
     return render(request, "senator/create.html", context)
+
+def senator_list_view(request):
+    queryset = Senator.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, "senator/list.html", context)
 
 # Senate_Bill views
 def senate_bill_detail_view(request):
@@ -59,3 +73,10 @@ def senate_bill_create_view(request):
         "form": form
     }
     return render(request, "senate_bill/create.html", context)
+
+def senate_bill_list_view(request):
+    queryset = Senate_Bill.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, "senate_bill/list.html", context)
