@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, state_view, senator_view, bill_view
-from congress.views import state_detail_view, senate_bill_detail_view, senator_detail_view
+from congress.views import state_detail_view, senate_bill_detail_view, senator_detail_view, state_create_view, senator_create_view, senate_bill_create_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -25,7 +25,10 @@ urlpatterns = [
     path ('search-state/', state_view, name="state"),
     path ('search-bill/', bill_view, name="bill"),
     path ('search-senator/', senator_view, name="senator"),
-    path ('state/', state_detail_view),
-    path ('senator/', senator_detail_view),
-    path ('senate_bill/', senate_bill_detail_view)
+    path ('detail-state/', state_detail_view),
+    path ('detail-senator/', senator_detail_view),
+    path ('detail-senate_bill/', senate_bill_detail_view),
+    path ('create-state/', state_create_view),
+    path ('create-senator/', senator_create_view),
+    path ('create-senate_bill/', senate_bill_create_view)
 ]
