@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'congress',
-    'pages'
+    'pages',
+    'polls'
 ]
 
 MIDDLEWARE = [
