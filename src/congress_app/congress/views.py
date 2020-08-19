@@ -19,6 +19,13 @@ def state_create_view(request):
     }
     return render(request, "state/create.html", context)
 
+def state_list_view(request):
+    queryset = State.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, "state/list.html", context)
+
 # Senator views
 def senator_detail_view(request):
     obj = Senator.objects.get(id=1)
