@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'congress/style.css' %}">
 
 {% block content %}
     <h1>Keep track of Congressional votes!</h1>
+    <img src="{% static "congress/multicultural.jpg" %}" alt="Multicultural">
 {% endblock %}
